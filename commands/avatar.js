@@ -6,14 +6,14 @@ exports.run = async(client, message)=> {
   if(user){
     
 const embed = new Discord.MessageEmbed()
-.setTitle(`<@${user.id}> adlı kullanıcının avatarı.`)
+.setAuthor(${user.displayAvatarURL} adlı kullanıcının avatarı.`)
 .setImage(user.displayAvatarURL({dynamic:true})) 
 .setTimestamp()
 .setFooter(`${message.author.tag} tarafından istendi.`)
 message.channel.send(embed)
  } else {
   const embed = new Discord.MessageEmbed()
-.setTitle(`<@${user.id}> adlı kullanıcının avatarı.`)
+.setAuthor(`${message.author.avatarURL} adlı kullanıcının avatarı.`)
 .setImage(message.author.avatarURL({dynamic:true}))
 .setTimestamp()
 .setFooter(`${message.author.tag} tarafından istendi.`)
