@@ -119,3 +119,17 @@ client.on("error", e => {
 });
 
 client.login(ayarlar.token);
+
+// KANALLI HOŞGELDİN
+
+client.on("guildMemberAdd", member => {
+  var tag = ""; // buraya sunucunuzun tagını girin
+  var kanal = "705472380340011131" // buraya atılacak kanalı girin 
+  const embed = new Discord.MessageEmbed()
+    .setColor("RED")
+    .setDescription(
+      `${tag} ${member} **Hoş Geldin , Seninle Beraber** \`${member.guild.memberCount}\` **Üyeye Ulaştık.**\n${tag} **Sunucumuzun** \`Kurallarına\` <#kuralların olduğu kanal id> **Odasından Bakabilirsin.**`
+    );
+  
+  kanal.send(embed);
+}); // Developed by Clerance
