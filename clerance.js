@@ -139,7 +139,18 @@ client.on("guildMemberAdd", member => {
 
 // BOTU SESLİ KANALA SOKAR.
 
-client.on('ready', ()=>{
+client.on('ready', function(){
   let channel = client.channels.cache.get('705472377198346362');
 channel.join()
 })
+
+// OTO ROL
+  client.on("guildMemberAdd", async (member) => {
+    member.roles.add("705472339084705822")
+  var kanal = "705472380340011131"
+    const embed = new Discord.MessageEmbed()
+      .setColor("RED")
+      .addField(`Mvuki support` , `• ${member} adlı üye sunucumuza katıldı, <@&705472339084705822> rolünü verdim!\n • Sunucumuz artık \`${member.guild.memberCount}\` üyeye sahip.! `
+      );
+    member.guild.channels.cache.get(kanal).send(embed);
+  }); // Developed by Clerance
