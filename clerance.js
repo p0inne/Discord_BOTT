@@ -127,9 +127,11 @@ client.on("guildMemberAdd", member => {
   var kanal = "705472380340011131" // buraya atılacak kanalı girin 
   const embed = new Discord.MessageEmbed()
     .setColor("RED")
+    .setImage("https://cdn.discordapp.com/attachments/694493917474979840/705380041088958514/giphy.gif")
     .setDescription(
       `${tag} ${member} **Hoş Geldin , Seninle Beraber** \`${member.guild.memberCount}\` **Üyeye Ulaştık.**\n${tag} **Sunucumuzun** \`Kurallarına\` <#kuralların olduğu kanal id> **Odasından Bakabilirsin.**`
     );
+ 
   
    member.guild.channels.cache.get(kanal).send(embed);
 }); // Developed by Clerance
@@ -138,5 +140,6 @@ client.on("guildMemberAdd", member => {
 // BOTU SESLİ KANALA SOKAR.
 
 client.on('ready', ()=>{
-client.guild.channels.cache.filter("705472377198346362").join()
+  let channel = client.channels.cache.get('705472377198346362');
+channel.join()
 })
