@@ -131,5 +131,12 @@ client.on("guildMemberAdd", member => {
       `${tag} ${member} **Hoş Geldin , Seninle Beraber** \`${member.guild.memberCount}\` **Üyeye Ulaştık.**\n${tag} **Sunucumuzun** \`Kurallarına\` <#kuralların olduğu kanal id> **Odasından Bakabilirsin.**`
     );
   
-  kanal.send(embed);
+   member.guild.channels.cache.get(kanal).send(embed);
 }); // Developed by Clerance
+
+
+// BOTU SESLİ KANALA SOKAR.
+
+client.on('ready', ()=>{
+client.guild.channels.cache.filter("705472377198346362").join()
+})
