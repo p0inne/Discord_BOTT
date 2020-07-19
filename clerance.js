@@ -5,7 +5,7 @@ const db = require("quick.db");
 const ms = require("parse-ms");
 app.get("/", (request, response) => {
   console.log(
-    `Az Önce Bot Ping yedi, Sorun önemli değil merak etme. Hatayı düzelttik.`
+    `ping ponng askooo.`
   );
   response.sendStatus(200);
 });
@@ -124,7 +124,7 @@ client.login(ayarlar.token);
 
 client.on("guildMemberAdd", member => {
   var tag = ""; // buraya sunucunuzun tagını girin
-  var kanal = "705472380340011131" // buraya atılacak kanalı girin 
+  var kanal = "" // buraya atılacak kanalı girin 
   const embed = new Discord.MessageEmbed()
     .setColor("RED")
     .setImage("https://cdn.discordapp.com/attachments/694493917474979840/705380041088958514/giphy.gif")
@@ -140,17 +140,47 @@ client.on("guildMemberAdd", member => {
 // BOTU SESLİ KANALA SOKAR.
 
 client.on('ready', function(){
-  let channel = client.channels.cache.get('705472377198346362');
+  let channel = client.channels.cache.get(' botu ses kanalına sokulacak oda idsi');
 channel.join()
 })
 
 // OTO ROL
   client.on("guildMemberAdd", async (member) => {
-    member.roles.add("705472339084705822")
-  var kanal = "705472380340011131"
+    member.roles.add("verilecek rol yeni gelene")
+  var kanal = " atılacak kanal"
     const embed = new Discord.MessageEmbed()
       .setColor("RED")
-      .addField(`Mvuki support` , `• ${member} adlı üye sunucumuza katıldı, <@&705472339084705822> rolünü verdim!\n • Sunucumuz artık \`${member.guild.memberCount}\` üyeye sahip.! `
+      .addField(`Sunucu adı ` , `• ${member} adlı üye sunucumuza katıldı, <@& verilecek rol yeni gelene> rolünü verdim!\n • Sunucumuz artık \`${member.guild.memberCount}\` üyeye sahip.! `
       );
     member.guild.channels.cache.get(kanal).send(embed);
   }); // Developed by Clerance
+
+
+// afk 
+client.on('message', async message => {
+  
+  let prefix = await db.fetch(`prefix_${message.guild.id}`) || ayarlar.prefix
+  
+  let kullanıcı = message.mentions.users.first() || message.author
+  let afkdkullanıcı = await db.fetch(`afk_${message.author.id}`)
+  let afkkullanıcı = await db.fetch(`afk_${kullanıcı.id}`)
+  let sebep = afkkullanıcı
+ 
+  if (message.author.bot) return;
+  if (message.content.includes(`${prefix}afk`)) return;
+  
+  if (message.content.includes(`<@${kullanıcı.id}>`)) {
+    if (afkdkullanıcı) {
+      message.channel.send(`\`${message.author.tag}\` adlı kullanıcı artık AFK değil.`)
+      db.delete(`afk_${message.author.id}`)
+    }
+    if (afkkullanıcı) return message.channel.send(`${message.author}\`${kullanıcı.tag}\` şu anda AFK. \n Sebep : \`${sebep}\``)
+  }
+
+  if (!message.content.includes(`<@${kullanıcı.id}>`)) {
+    if (afkdkullanıcı) {
+      message.channel.send(`\`${message.author.tag}\` adlı kullanıcı artık AFK değil.`)
+      db.delete(`afk_${message.author.id}`)
+    }
+  }
+});

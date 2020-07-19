@@ -1,1 +1,1 @@
-Clerance'den v12 boş alt yapı sizlerle!!
+Clerance'den v12 kayıt alt yapı sizlerle!!
