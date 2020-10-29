@@ -78,7 +78,7 @@ client.load = command => {
   });
 };
 
-client.unload = command => {
+client.unload = command => {  
   return new Promise((resolve, reject) => {
     try {
       delete require.cache[require.resolve(`./commands/${command}`)];
@@ -134,7 +134,7 @@ client.on("guildMemberAdd", member => {
  
   
    member.guild.channels.cache.get(kanal).send(embed);
-}); // Developed by Clerance
+}); // URS
 
 
 // BOTU SESLİ KANALA SOKAR.
@@ -153,7 +153,7 @@ channel.join()
       .addField(`Sunucu adı ` , `• ${member} adlı üye sunucumuza katıldı, <@& verilecek rol yeni gelene> rolünü verdim!\n • Sunucumuz artık \`${member.guild.memberCount}\` üyeye sahip.! `
       );
     member.guild.channels.cache.get(kanal).send(embed);
-  }); // Developed by Clerance
+  }); // URS
 
 
 // afk 
