@@ -5,7 +5,7 @@ const db = require("quick.db");
 const ms = require("parse-ms");
 app.get("/", (request, response) => {
   console.log(
-    `ping ponng askooo.`
+    `urs urs urs.`
   );
   response.sendStatus(200);
 });
@@ -140,7 +140,7 @@ client.on("guildMemberAdd", member => {
 // BOTU SESLİ KANALA SOKAR.
 
 client.on('ready', function(){
-  let channel = client.channels.cache.get(' botu ses kanalına sokulacak oda idsi');
+  let channel = client.channels.cache.get(' BOTUN SESTE AFK KALACAĞI SES KANAL İD');
 channel.join()
 })
 
