@@ -1,1 +1,0 @@
-Clerance'den v12 kayıt alt yapı sizlerle!!
