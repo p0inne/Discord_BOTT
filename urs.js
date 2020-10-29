@@ -127,7 +127,7 @@ client.on("guildMemberAdd", member => {
   var kanal = "" // buraya atılacak kanalı girin 
   const embed = new Discord.MessageEmbed()
     .setColor("RED")
-    .setImage("https://cdn.discordapp.com/attachments/694493917474979840/705380041088958514/giphy.gif")
+    .setImage("GİF LİNK")
     .setDescription(
       `${tag} ${member} **Hoş Geldin , Seninle Beraber** \`${member.guild.memberCount}\` **Üyeye Ulaştık.**\n${tag} **Sunucumuzun** \`Kurallarına\` <#kuralların olduğu kanal id> **Odasından Bakabilirsin.**`
     );
