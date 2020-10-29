@@ -16,7 +16,7 @@ module.exports = client => {
     
   
   //DURUM İÇİN
-  client.user.setActivity(`Clerance`,{ type: 'LISTENING' });
+  client.user.setActivity(`URSULA AHMET ALTYAPI`,{ type: 'LISTENING' });
   //LISTENING = DİNLİYOR
   //WATCHING = İZLİYOR
   //PLAYING = OYNUYOR 
@@ -24,8 +24,8 @@ module.exports = client => {
   
   
   //YAYIN İÇİN
-  //client.user.setActivity("Clerance hehe", {
+  //client.user.setActivity("Urs", {
   //type: "STREAMING",
-  //url: "https://www.twitch.tv/clerance"
+  //url: "https://www.twitch.tv/urs"
   //});
 };

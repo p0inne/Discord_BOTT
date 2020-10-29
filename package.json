@@ -1,11 +1,11 @@
 {
-  "//3": "Clerance tarafından hazırlanmıştır.",
+  "//3": "urs tarafından hazırlanmıştır",
   "name": "hello-express",
   "version": "0.0.1",
   "description": "A simple Node app built on Express, instantly up and running.",
-  "main": "clerance.js",
+  "main": "urs.js",
   "scripts": {
-    "start": "node clerance.js"
+    "start": "node urs.js"
   },
   "dependencies": {
     "express": "^4.17.1",

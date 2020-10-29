@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 exports.run = function (client, message, args) {
-  if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Ahh tanrım yetkin yok ki..");
+  if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Komut için gerekli izinlere sahip değilsiniz");
   if (!args[0]) return message.channel.send("Silinecek mesajın miktarını yaz!");
   message.delete()
   message.react('622507169442693143')

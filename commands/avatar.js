@@ -24,11 +24,11 @@ message.channel.send(embed)
 exports.conf = {
 	enabled:false,
 	guildOnly: false,
-	aliases: [],
+	aliases: ["avatar","pp","pf"],
 	permLevel: 0,
 }
 
 exports.help = {
-	name: 'avatarclerance',
+	name: 'avatar',
 
 }

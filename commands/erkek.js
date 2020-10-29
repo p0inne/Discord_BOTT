@@ -3,9 +3,9 @@ const db = require("quick.db")
 
 exports.run = async (client, message, args) => {
 
-if (!message.member.roles.cache.has("rol id")&& !message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`Bu komutu kullanabilmek için \`kullanacağı rol isimi\` yetkisine sahip olmasınız.`);
+if (!message.member.roles.cache.has("KAYITÇI ROL İD")&& !message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`Bu komutu kullanabilmek için \`kullanacağı rol isimi\` yetkisine sahip olmasınız.`);
   let kullanıcı = message.mentions.users.first()
-  if (!kullanıcı) return message.channel.send('Kullanıcıyı etiketlemeyi unuttun kanka.')
+  if (!kullanıcı) return message.channel.send('Kullanıcıyı etiketlemelisiniz')
   let rol = message.mentions.roles.first()
   let member = message.guild.member(kullanıcı)
  member.roles.add('');//verilecek rol
